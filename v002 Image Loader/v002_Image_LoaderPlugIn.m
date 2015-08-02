@@ -159,6 +159,7 @@ void MyQCPlugInBufferReleaseCallback(const void* address, void * context)
             size_t imageHeight = CGImageGetHeight(image);
             size_t imageBytesPerRow = CGImageGetBytesPerRow(image);
             CGColorSpaceRef imageColorSpace = CGImageGetColorSpace(image);
+            CGColorSpaceRef contextColorSpace = [context colorSpace];
             
             CGDataProviderRef imageDataProvider = CGImageGetDataProvider(image);
             
@@ -172,7 +173,7 @@ void MyQCPlugInBufferReleaseCallback(const void* address, void * context)
                                                                       bytesPerRow:imageBytesPerRow
                                                                   releaseCallback:MyQCPlugInBufferReleaseCallback
                                                                    releaseContext:image
-                                                                       colorSpace:imageColorSpace
+                                                                       colorSpace:(self.inputColorCorrect) ? imageColorSpace : contextColorSpace
                                                                  shouldColorMatch:self.inputColorCorrect];
             
             CGDataProviderRelease(imageDataProvider);
