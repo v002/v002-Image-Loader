@@ -26,7 +26,6 @@ void MyQCPlugInBufferReleaseCallback(const void* address, void * context)
 @synthesize loadedImage;
 
 @dynamic inputImagePath;
-@dynamic inputRenderingIntent;
 @dynamic inputColorCorrect;
 @dynamic outputImage;
 
@@ -127,36 +126,57 @@ void MyQCPlugInBufferReleaseCallback(const void* address, void * context)
         
         image = CGImageSourceCreateImageAtIndex(imageSource, 0, (CFDictionaryRef)opts);
     
-        // bad form this is not an image provider but QC will swizzle ?
-
+        // our output image
         id<QCPlugInOutputImageProvider> imageProvider = nil;
+
+        // calculate our image format
+        // Note we are not
+        NSString* imageProviderFormat = nil;
+
+        size_t imageBitsPerComponent = CGImageGetBitsPerComponent(image);
+        if(imageBitsPerComponent == 32)
+        {
+            imageProviderFormat = QCPlugInPixelFormatRGBAf;
+        }
+        else if(imageBitsPerComponent == 16)
+        {
+            // QC does not support 16 bbc
+            // TODO: Swizzle it to 32 by rendering into a 32 CGBitmap context.
+            imageProviderFormat = nil;
+        }
+        else if (imageBitsPerComponent == 8)
+        {
+#if __BIG_ENDIAN__
+            imageProviderFormat = QCPlugInPixelFormatARGB8;
+#else 
+            imageProviderFormat = QCPlugInPixelFormatBGRA8;
+#endif
+        }
         
-        NSString* pixelFormat = nil;
-        CGBitmapInfo bitmapInfo = CGImageGetBitmapInfo(image);
-        
-        
-        size_t imageWidth = CGImageGetWidth(image);
-        size_t imageHeight = CGImageGetHeight(image);
-        size_t imageBytesPerRow = CGImageGetBytesPerRow(image);
-        CGColorSpaceRef imageColorSpace = CGImageGetColorSpace(image);
-        
-        CGDataProviderRef imageDataProvider = CGImageGetDataProvider(image);
-        
-        CFDataRef data = CGDataProviderCopyData(imageDataProvider);
-        void* baseAdrress = CFDataGetBytePtr(data);
-        
-        imageProvider = [context outputImageProviderFromBufferWithPixelFormat:QCPlugInPixelFormatRGBAf
-                                                                   pixelsWide:imageWidth
-                                                                   pixelsHigh:imageHeight
-                                                                  baseAddress:baseAdrress
-                                                                  bytesPerRow:imageBytesPerRow
-                                                              releaseCallback:MyQCPlugInBufferReleaseCallback
-                                                               releaseContext:image
-                                                                   colorSpace:imageColorSpace
-                                                             shouldColorMatch:self.inputColorCorrect];
-        
-        CGDataProviderRelease(imageDataProvider);
-        
+        if(imageProviderFormat)
+        {
+            size_t imageWidth = CGImageGetWidth(image);
+            size_t imageHeight = CGImageGetHeight(image);
+            size_t imageBytesPerRow = CGImageGetBytesPerRow(image);
+            CGColorSpaceRef imageColorSpace = CGImageGetColorSpace(image);
+            
+            CGDataProviderRef imageDataProvider = CGImageGetDataProvider(image);
+            
+            CFDataRef data = CGDataProviderCopyData(imageDataProvider);
+            void* baseAdrress = (void*)CFDataGetBytePtr(data);
+            
+            imageProvider = [context outputImageProviderFromBufferWithPixelFormat:imageProviderFormat
+                                                                       pixelsWide:imageWidth
+                                                                       pixelsHigh:imageHeight
+                                                                      baseAddress:baseAdrress
+                                                                      bytesPerRow:imageBytesPerRow
+                                                                  releaseCallback:MyQCPlugInBufferReleaseCallback
+                                                                   releaseContext:image
+                                                                       colorSpace:imageColorSpace
+                                                                 shouldColorMatch:self.inputColorCorrect];
+            
+            CGDataProviderRelease(imageDataProvider);
+        }
         if(imageProvider)
             self.outputImage = imageProvider;
         else

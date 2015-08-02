@@ -16,7 +16,6 @@
 @property (assign) BOOL loadedImage;
 
 @property (copy) NSString* inputImagePath;
-@property (assign) NSInteger inputRenderingIntent; // CGColorRenderingIntent
 @property (assign) BOOL inputColorCorrect; // CGColorRenderingIntent
 
 
