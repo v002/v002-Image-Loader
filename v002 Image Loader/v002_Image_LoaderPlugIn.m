@@ -37,7 +37,29 @@ void MyQCPlugInBufferReleaseCallback(const void* address, void * context)
 
 + (NSDictionary *)attributesForPropertyPortWithKey:(NSString *)key
 {
+
+    if([key isEqualToString:@"inputImagePath"])
+    {
+        return @{QCPortAttributeNameKey : @"Image Location"};
+    }
+    
+    if([key isEqualToString:@"inputColorCorrect"])
+    {
+        return @{QCPortAttributeNameKey : @"Color Correction",
+                 QCPortAttributeDefaultValueKey : @YES};
+    }
+    
+    if([key isEqualToString:@"outputImage"])
+    {
+        return @{QCPortAttributeNameKey : @"Image"};
+    }
+
 	return nil;
+}
+
++ (NSArray*) sortedPropertyPortKeys
+{
+    return @[@"inputImagePath", @"inputColorCorrect", @"outputmage"];
 }
 
 + (QCPlugInExecutionMode)executionMode
@@ -66,12 +88,6 @@ void MyQCPlugInBufferReleaseCallback(const void* address, void * context)
 {
     [super dealloc];
 
-//    if(image)
-//    {
-//        CGImageRelease(image);
-//        image = NULL;
-//    }
-
 }
 
 @end
@@ -89,9 +105,7 @@ void MyQCPlugInBufferReleaseCallback(const void* address, void * context)
 
 - (BOOL)execute:(id <QCPlugInContext>)context atTime:(NSTimeInterval)time withArguments:(NSDictionary *)arguments
 {
-	
-//	CGLContextObj cgl_ctx = [context CGLContextObj];
-	
+		
     if([self didValueForInputKeyChange:@"inputImagePath"] || [self didValueForInputKeyChange:@"inputColorCorrect"])
     {
         // Bail early if we have a nil or empty path because f that noise.
@@ -99,11 +113,6 @@ void MyQCPlugInBufferReleaseCallback(const void* address, void * context)
         {
             return YES;
         }
-//        if(image)
-//        {
-//            CGImageRelease(image);
-//            image = NULL;
-//        }
         
         // load image
         CGImageSourceRef imageSource;
@@ -122,8 +131,8 @@ void MyQCPlugInBufferReleaseCallback(const void* address, void * context)
 
         id<QCPlugInOutputImageProvider> imageProvider = nil;
         
-        //            NSString* pixelFormat = nil;
-        //            CGBitmapInfo bitmapInfo = CGImageGetBitmapInfo(image);
+        NSString* pixelFormat = nil;
+        CGBitmapInfo bitmapInfo = CGImageGetBitmapInfo(image);
         
         
         size_t imageWidth = CGImageGetWidth(image);
@@ -164,12 +173,6 @@ void MyQCPlugInBufferReleaseCallback(const void* address, void * context)
 
 - (void)stopExecution:(id <QCPlugInContext>)context
 {
-//    if(image)
-//    {
-//        CGImageRelease(image);
-//        image = NULL;
-//        self.loadedImage = NO;
-//    }
 }
 
 @end
