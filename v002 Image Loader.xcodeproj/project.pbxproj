@@ -1,0 +1,281 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B5DA10E1B6D8A21007E2FC9 /* v002_Image_LoaderPlugIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B5DA10D1B6D8A21007E2FC9 /* v002_Image_LoaderPlugIn.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1B5DA1071B6D8A21007E2FC9 /* v002 Image Loader.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "v002 Image Loader.plugin"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B5DA10B1B6D8A21007E2FC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B5DA10C1B6D8A21007E2FC9 /* v002_Image_LoaderPlugIn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = v002_Image_LoaderPlugIn.h; sourceTree = "<group>"; };
+		1B5DA10D1B6D8A21007E2FC9 /* v002_Image_LoaderPlugIn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = v002_Image_LoaderPlugIn.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1B5DA1031B6D8A21007E2FC9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B5DA0FD1B6D8A21007E2FC9 = {
+			isa = PBXGroup;
+			children = (
+				1B5DA1091B6D8A21007E2FC9 /* v002 Image Loader */,
+				1B5DA1081B6D8A21007E2FC9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1B5DA1081B6D8A21007E2FC9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B5DA1071B6D8A21007E2FC9 /* v002 Image Loader.plugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B5DA1091B6D8A21007E2FC9 /* v002 Image Loader */ = {
+			isa = PBXGroup;
+			children = (
+				1B5DA10C1B6D8A21007E2FC9 /* v002_Image_LoaderPlugIn.h */,
+				1B5DA10D1B6D8A21007E2FC9 /* v002_Image_LoaderPlugIn.m */,
+				1B5DA10A1B6D8A21007E2FC9 /* Supporting Files */,
+			);
+			path = "v002 Image Loader";
+			sourceTree = "<group>";
+		};
+		1B5DA10A1B6D8A21007E2FC9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1B5DA10B1B6D8A21007E2FC9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1B5DA1061B6D8A21007E2FC9 /* v002 Image Loader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B5DA1111B6D8A21007E2FC9 /* Build configuration list for PBXNativeTarget "v002 Image Loader" */;
+			buildPhases = (
+				1B5DA1021B6D8A21007E2FC9 /* Sources */,
+				1B5DA1031B6D8A21007E2FC9 /* Frameworks */,
+				1B5DA1041B6D8A21007E2FC9 /* Resources */,
+				1B5DA1051B6D8A21007E2FC9 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "v002 Image Loader";
+			productName = "v002 Image Loader";
+			productReference = 1B5DA1071B6D8A21007E2FC9 /* v002 Image Loader.plugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1B5DA0FE1B6D8A21007E2FC9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = v002;
+				TargetAttributes = {
+					1B5DA1061B6D8A21007E2FC9 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+				};
+			};
+			buildConfigurationList = 1B5DA1011B6D8A21007E2FC9 /* Build configuration list for PBXProject "v002 Image Loader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1B5DA0FD1B6D8A21007E2FC9;
+			productRefGroup = 1B5DA1081B6D8A21007E2FC9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1B5DA1061B6D8A21007E2FC9 /* v002 Image Loader */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1B5DA1041B6D8A21007E2FC9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1B5DA1051B6D8A21007E2FC9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This shell script simply copies the built plug-in to \"~/Library/Graphics/Quartz Composer Plug-Ins\" and overrides any previous version at that location\n\nmkdir -p \"$USER_LIBRARY_DIR/Graphics/Quartz Composer Plug-Ins\"\nrm -rf \"$USER_LIBRARY_DIR/Graphics/Quartz Composer Plug-Ins/v002 Image Loader.plugin\"\ncp -rf \"$BUILT_PRODUCTS_DIR/v002 Image Loader.plugin\" \"$USER_LIBRARY_DIR/Graphics/Quartz Composer Plug-Ins/\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1B5DA1021B6D8A21007E2FC9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B5DA10E1B6D8A21007E2FC9 /* v002_Image_LoaderPlugIn.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1B5DA10F1B6D8A21007E2FC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		1B5DA1101B6D8A21007E2FC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		1B5DA1121B6D8A21007E2FC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "v002 Image Loader/Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Graphics/Quartz Composer Plug-Ins";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = plugin;
+			};
+			name = Debug;
+		};
+		1B5DA1131B6D8A21007E2FC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "v002 Image Loader/Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Graphics/Quartz Composer Plug-Ins";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = plugin;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1B5DA1011B6D8A21007E2FC9 /* Build configuration list for PBXProject "v002 Image Loader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B5DA10F1B6D8A21007E2FC9 /* Debug */,
+				1B5DA1101B6D8A21007E2FC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B5DA1111B6D8A21007E2FC9 /* Build configuration list for PBXNativeTarget "v002 Image Loader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B5DA1121B6D8A21007E2FC9 /* Debug */,
+				1B5DA1131B6D8A21007E2FC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1B5DA0FE1B6D8A21007E2FC9 /* Project object */;
+}
